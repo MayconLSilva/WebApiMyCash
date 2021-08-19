@@ -51,13 +51,6 @@ namespace WebApiCash
                 return NotFound();
 
 
-            var teste = (from item in UsuarioRetornado where item.cpfUsuario.Equals(value) select item.nomeUsuario).First();
-            System.Diagnostics.Debug.WriteLine("teste com for antigo " + teste);
-
-            var teste2 = UsuarioRetornado.First(x => x.cpfUsuario.Equals(value)).nomeUsuario.ToString();
-            System.Diagnostics.Debug.WriteLine("teste com aenumerable " + teste2);
-
-
             //Pego usuário
             usuarioAtivo = UsuarioRetornado.First(x => x.cpfUsuario.Equals(value)).ativoUsuario;
 
